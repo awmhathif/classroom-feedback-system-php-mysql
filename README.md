@@ -15,6 +15,8 @@ This repository is the **free starter** of a step by step coursework kit. It is 
 
 Read the guide online: https://awmhathif.github.io/classroom-feedback-system-php-mysql/START-HERE.html
 
+Try the 10 sample viva questions and the practice mode online: https://awmhathif.github.io/classroom-feedback-system-php-mysql/viva-sample.html
+
 ## How to start
 
 1. Download this repository (green **Code** button, then **Download ZIP**) and unzip it.
