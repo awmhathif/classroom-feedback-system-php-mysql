@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Viva questions: free sample</title>
+<style>
+:root {
+    --page: #f9f8f4;
+    --white: #ffffff;
+    --text: #181816;
+    --muted: #5a5954;
+    --line: #dddad0;
+    --soft: #f2f0e8;
+    --dark: #1f6b52;
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    background: var(--page);
+    color: var(--text);
+}
+a { color: var(--dark); text-underline-offset: 3px; }
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: normal; }
+.back { display: inline-block; font-size: 15px; color: var(--muted); }
+main { max-width: 820px; margin: 0 auto; padding: 32px 16px 120px; }
+h1 { font-size: 38px; line-height: 1.15; margin: 16px 0 8px; }
+.lead { font-size: 19px; color: var(--muted); margin-top: 0; }
+h2 { font-size: 26px; margin: 44px 0 10px; padding-top: 12px; border-top: 1px solid var(--line); }
+h3 { font-size: 20px; margin: 28px 0 8px; }
+code { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 0.88em; background: var(--soft); padding: 1px 5px; border-radius: 5px; }
+pre { position: relative; background: var(--white); border: 1px solid var(--line); padding: 40px 16px 14px; border-radius: 10px; font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere; }
+pre .copy { position: absolute; top: 8px; right: 8px; font-size: 13px; padding: 3px 10px; }
+pre code { background: none; padding: 0; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; margin: 12px 0; background: var(--white); }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+th { color: var(--muted); font-weight: 600; }
+.table-scroll { overflow-x: auto; }
+li { margin: 4px 0; }
+.muted { color: var(--muted); }
+details { margin: 10px 0; border: 1px solid var(--line); border-radius: 12px; padding: 0 16px; }
+summary { cursor: pointer; padding: 12px 0; font-weight: 600; }
+details[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+button {
+    font: inherit;
+    font-size: 15px;
+    padding: 7px 16px;
+    border: 1px solid var(--dark);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--text);
+    cursor: pointer;
+}
+button:hover { background: var(--soft); }
+.tool { margin: 16px 0; padding: 16px 18px; border-radius: 14px; background: var(--soft); }
+.tool label { display: block; font-weight: 600; font-size: 15px; margin-top: 10px; }
+.tool input, .tool textarea, .tool select {
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+    padding: 8px 10px;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 400;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--text);
+}
+.tool textarea:focus, .tool input:focus, .tool select:focus { outline: none; border-color: var(--dark); }
+.tool-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 12px 0 0; }
+.vague { color: var(--text); font-size: 14px; min-height: 1.4em; }
+.card-q { font-size: 22px; font-weight: 600; line-height: 1.3; min-height: 3.9em; }
+#cardA { margin-top: 4px; padding-top: 6px; border-top: 1px solid var(--line); }
+@media (max-width: 640px) { body { font-size: 16px; } h1 { font-size: 30px; } h2 { font-size: 23px; } th, td { padding: 6px; font-size: 14px; } pre { font-size: 13px; } }
+@media print { .tool, .copy, .back { display: none; } }
+</style>
+</head>
+<body>
+<main>
+<a class="back" href="../START-HERE.html">Back to the guide</a>
+<h1>Viva questions: free sample</h1>
+<p class="lead">10 of the 54 questions in the full viva guide, answered with this project's own code.</p>
+<p>The full guide also has a 6 minute demo plan, live change requests examiners ask for, and every other question. <a href="https://awmhathif.gumroad.com/l/classroom-feedback-system">Get the full kit</a>.</p>
+<h2>Practice mode</h2>
+<p>Press <strong>Start practice</strong>, answer out loud, then show the answer and mark it.</p>
+<div class="tool" id="practice">
+<p class="tool-buttons"><button type="button" id="startPractice">Start practice</button> <button type="button" id="resetPractice">Reset</button> <span id="practiceStats" class="muted"></span></p>
+<div id="card" hidden>
+<p class="muted" id="cardCat"></p>
+<p class="card-q" id="cardQ"></p>
+<p class="tool-buttons"><button type="button" id="reveal">Show answer</button></p>
+<div id="cardA" hidden></div>
+<p class="tool-buttons" id="markRow" hidden><button type="button" id="knew">I knew it</button> <button type="button" id="again">Practise again</button></p>
+
+</div>
+
+</div>
+
+<h2>Questions and answers</h2>
+<h3>About the project</h3>
+<details class="qa">
+<summary>Tell me about your project.</summary>
+<p>It's a web based classroom feedback system. A teacher creates a class with a join code, prepares a feedback round from ready questions and opens it for a set time. Students answer once, and nobody can tell who said what. When the round closes with enough answers, the teacher sees averages, the spread of scores and comments, hides abusive comments, replies to the class and compares rounds. It's built with PHP, MySQL, HTML, CSS and a little JavaScript on XAMPP.</p>
+</details>
+<details class="qa">
+<summary>What problem does it solve?</summary>
+<p>Students don't criticise a teacher honestly if they think they can be identified. Paper forms can be recognised by handwriting and are slow to count; open online forms let one student answer many times; forms that stop that usually record who answered. Students also rarely hear what was done with their feedback. This system gives one answer per student without linking answers to students, hides results with too few answers, and has a reply.</p>
+</details>
+<h3>Technology and architecture</h3>
+<details class="qa">
+<summary>Why PHP and MySQL, and why no framework?</summary>
+<p>They run on almost every web host and come together in XAMPP. I used plain PHP so I could understand and explain every line. A framework like Laravel would do sessions, CSRF and queries for me, but then I couldn't show how they work.</p>
+</details>
+<details class="qa">
+<summary>Explain the architecture.</summary>
+<p>Three tiers: the <strong>browser</strong> (HTML, CSS, a little JavaScript), the <strong>web server</strong> (Apache running PHP), and the <strong>database</strong> (MySQL). The browser requests a page, PHP runs, asks MySQL for data with prepared queries, builds the HTML and sends it back. The browser never talks to the database directly, so every rule is checked on the server.</p>
+</details>
+<h3>Database</h3>
+<details class="qa">
+<summary>Explain your tables and relationships.</summary>
+<p>Seven tables. <code>users</code> holds students and teachers. <code>classes</code> belong to a teacher. <code>enrolments</code> links students and classes (many to many). <code>rounds</code> belong to a class, and <code>questions</code> to a round. <code>participations</code> records which student answered which round. <code>answers</code> holds what was answered, linked to the round and the question but not to any student.</p>
+</details>
+<details class="qa">
+<summary>How does the database keep answers anonymous?</summary>
+<p>Who answered and what was answered are in two tables with nothing joining them. <code>participations</code> has only round and student: no time, no running number, nothing about the answers. <code>answers</code> has no student id and no time, and its id is a random number, so the order of rows says nothing about who answered first or which answers go together. Both are written in one transaction, so the counts always match.</p>
+</details>
+<h3>Rounds and results</h3>
+<details class="qa">
+<summary>Explain the round statuses.</summary>
+<p>A round starts as <strong>draft</strong>: the teacher edits its questions and can delete it. Opening makes it <strong>open</strong>: the questions are locked, students can answer, and the teacher can extend it or close it early. It becomes <strong>closed</strong> when the closing time passes or the teacher closes it, and it never opens again. <strong>Show:</strong> the state diagram in the report.</p>
+</details>
+<details class="qa">
+<summary>What must be true before a round can open?</summary>
+<p>The class has at least 4 students, the round has at least one rating question and 1 to 12 questions of 5 to 200 letters, and the closing time is in the future and within 60 days. Each failure gives its own reason. A class of 3 can never show results, so opening is refused rather than wasting students' time.</p>
+</details>
+<h3>Security</h3>
+<details class="qa">
+<summary>How do you prevent SQL injection?</summary>
+<p>Every query with user input is a prepared statement: <code>$conn-&gt;execute_query($sql, [values])</code> with <code>?</code> placeholders. The SQL and the values reach MySQL separately, so input can never change the query. <strong>Show:</strong> any query, for example <code>login.php</code>.</p>
+</details>
+<details class="qa">
+<summary>How do you prevent XSS?</summary>
+<p>Every value from users or the database is printed through my <code>e()</code> function, which uses <code>htmlspecialchars</code>. Typed HTML or script shows as text instead of running. <strong>Show:</strong> <code>includes/functions.php</code>, then any page.</p>
+</details>
+</main>
+
+<script>
+function store(key, value) {
+    try {
+        if (value === undefined) { return JSON.parse(localStorage.getItem(key) || "null"); }
+        localStorage.setItem(key, JSON.stringify(value));
+    } catch (e) { return null; }
+}
+
+function copyText(text, btn) {
+    function ok() { var old = btn.textContent; btn.textContent = "Copied"; setTimeout(function () { btn.textContent = old; }, 1500); }
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(ok);
+    } else {
+        var t = document.createElement("textarea");
+        t.value = text; document.body.appendChild(t); t.select();
+        try { document.execCommand("copy"); ok(); } catch (e) {}
+        document.body.removeChild(t);
+    }
+}
+
+// ---- Copy buttons on code ----
+document.querySelectorAll("pre").forEach(function (pre) {
+    var btn = document.createElement("button");
+    btn.className = "copy";
+    btn.type = "button";
+    btn.textContent = "Copy";
+    btn.addEventListener("click", function () { copyText(pre.querySelector("code") ? pre.querySelector("code").textContent : pre.textContent, btn); });
+    pre.appendChild(btn);
+});
+
+// ---- Weekly log builder ----
+(function () {
+    var tool = document.getElementById("logTool");
+    if (!tool) return;
+    var fields = tool.querySelectorAll("[data-k]");
+    var saved = store("progress-log") || {};
+    fields.forEach(function (f) {
+        if (saved[f.dataset.k]) f.value = saved[f.dataset.k];
+        f.addEventListener("input", function () {
+            saved[f.dataset.k] = f.value;
+            store("progress-log", saved);
+        });
+    });
+    var labels = { week: "Week", planned: "Planned", done: "Done", evidence: "Evidence", problems: "Problems",
+                   decisions: "Decisions", next: "Next week", questions: "Questions for supervisor", status: "Status" };
+    var vagueWords = ["some ", "various", "worked on", "good progress", "continue", "etc", "stuff", "things"];
+    document.getElementById("makeLog").addEventListener("click", function () {
+        var out = [];
+        var found = [];
+        fields.forEach(function (f) {
+            var v = f.value.trim();
+            if (v === "") return;
+            out.push(labels[f.dataset.k] + ": " + v);
+            vagueWords.forEach(function (w) {
+                if ((" " + v.toLowerCase() + " ").indexOf(w) !== -1 && found.indexOf(w.trim()) === -1) found.push(w.trim());
+            });
+        });
+        document.getElementById("logOut").value = out.join("\n\n");
+        document.getElementById("vague").textContent = found.length
+            ? "Vague words found: " + found.join(", ") + ". Replace them with what exactly you did."
+            : (out.length ? "No vague words found." : "");
+    });
+    document.getElementById("clearLog").addEventListener("click", function () {
+        if (!confirm("Clear all boxes?")) return;
+        fields.forEach(function (f) { if (f.tagName !== "SELECT") f.value = ""; });
+        saved = {};
+        store("progress-log", saved);
+        document.getElementById("logOut").value = "";
+        document.getElementById("vague").textContent = "";
+    });
+    document.getElementById("copyLog").addEventListener("click", function () {
+        copyText(document.getElementById("logOut").value, this);
+    });
+})();
+
+// ---- Viva practice cards ----
+(function () {
+    var box = document.getElementById("practice");
+    if (!box) return;
+    var cards = [];
+    document.querySelectorAll("details.qa").forEach(function (d, i) {
+        var h = d.previousElementSibling;
+        while (h && h.tagName !== "H3") h = h.previousElementSibling;
+        var answer = d.cloneNode(true);
+        answer.querySelector("summary").remove();
+        cards.push({ id: i, q: d.querySelector("summary").textContent, a: answer.innerHTML, cat: h ? h.textContent : "" });
+    });
+    var known = store("viva-known") || {};
+    var queue = [];
+    var current = null;
+
+    function stats() {
+        var n = Object.keys(known).length;
+        document.getElementById("practiceStats").textContent = n + " of " + cards.length + " marked as known";
+    }
+    function next() {
+        if (queue.length === 0) {
+            queue = cards.filter(function (c) { return !known[c.id]; });
+            queue.sort(function () { return Math.random() - 0.5; });
+        }
+        document.getElementById("card").hidden = false;
+        if (queue.length === 0) {
+            document.getElementById("cardCat").textContent = "";
+            document.getElementById("cardQ").textContent = "You've marked every question as known. Press Reset to go again.";
+            document.getElementById("reveal").hidden = true;
+            document.getElementById("cardA").hidden = true;
+            document.getElementById("markRow").hidden = true;
+            return;
+        }
+        current = queue.shift();
+        document.getElementById("cardCat").textContent = current.cat;
+        document.getElementById("cardQ").textContent = current.q;
+        document.getElementById("cardA").innerHTML = current.a;
+        document.getElementById("cardA").hidden = true;
+        document.getElementById("reveal").hidden = false;
+        document.getElementById("markRow").hidden = true;
+    }
+    document.getElementById("startPractice").addEventListener("click", function () { queue = []; next(); });
+    document.getElementById("reveal").addEventListener("click", function () {
+        document.getElementById("cardA").hidden = false;
+        document.getElementById("reveal").hidden = true;
+        document.getElementById("markRow").hidden = false;
+    });
+    document.getElementById("knew").addEventListener("click", function () {
+        known[current.id] = true; store("viva-known", known); stats(); next();
+    });
+    document.getElementById("again").addEventListener("click", function () {
+        queue.push(current); next();
+    });
+    document.getElementById("resetPractice").addEventListener("click", function () {
+        known = {}; store("viva-known", known); stats(); queue = []; document.getElementById("card").hidden = true;
+    });
+    stats();
+})();
+</script>
+</body>
+</html>
