@@ -31,7 +31,7 @@ The full kit continues from step 4 to step 9 in the same style and adds:
 
 - the finished, working system with demo data
 - every line of the code explained in plain English
-- a full sample proposal and final project report (Word) and proposal and final slides (PowerPoint)
+- a full sample proposal and project report (Word) and proposal and final slides (PowerPoint)
 - the viva guide: 54 questions with answers, a 6 minute demo plan and a practice mode
 - guides to change the colours and name, add your own features and write progress reports
 
